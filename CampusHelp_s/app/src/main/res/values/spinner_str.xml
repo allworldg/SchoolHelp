@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tasksort">
+        <item>组队</item>
+        <item>跑腿</item>
+        <item>交易</item>
+        <item>交流</item>
+        <item>其他</item>
+    </string-array>
+
+    <string-array name="sex">
+        <item>其他</item>
+        <item>男</item>
+        <item>女</item>
+    </string-array>
+</resources>

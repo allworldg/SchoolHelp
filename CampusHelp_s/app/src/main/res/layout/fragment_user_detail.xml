@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!--tools:context=".MainActivity"-->
+    <RelativeLayout style="@style/dinglan">
+
+<!--        <TextView-->
+<!--            android:id="@+id/user_detail_done"-->
+<!--            style="@style/dinglan_text"-->
+<!--            android:textSize="20dp"-->
+<!--            android:text="完成" />-->
+
+        <TextView
+            style="@style/dinglan_text"
+            android:text="用户详情" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+             <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="1dp"
+                android:background="#2979FF">
+
+                <ImageView
+                    android:id="@+id/ck_tx"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@mipmap/ic_launcher"
+                    android:src="@drawable/image_style_green" />
+
+                <TextView
+                    android:id="@+id/tv_user_detail_name"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="170dp"
+                    android:textSize="25dp"
+                    android:layout_marginTop="40dp"
+                    android:text="浮世留尘"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white" />
+                <TextView
+                    android:id="@+id/tv_user_detail_id"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="170dp"
+                    android:textSize="20dp"
+                    android:layout_marginTop="90dp"
+                    android:text="ID:1700600686"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@android:color/white" />
+
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/wd_item">
+                <TextView
+                    android:text="性别 :"
+                    style="@style/wd_item_textleft" />
+                <TextView
+                    android:id="@+id/ck_xb"
+                    android:text="男"
+                    style="@style/wd_item_textright" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/wd_item">
+                <TextView
+                    android:text="手机号 :"
+                    style="@style/wd_item_textleft" />
+                <TextView
+                    android:id="@+id/ck_sjh"
+                    android:text="12345678910"
+                    style="@style/wd_item_textright" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/wd_item">
+                <TextView
+                    android:text="邮箱 :"
+                    style="@style/wd_item_textleft" />
+                <TextView
+                    android:id="@+id/ck_yx"
+                    android:text="123456789@qq.com"
+                    style="@style/wd_item_textright" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/wd_item">
+                <TextView
+                    android:text="余额 :"
+                    style="@style/wd_item_textleft" />
+                <TextView
+                    android:id="@+id/ck_ye"
+                    android:text="35.5 U币"
+                    style="@style/wd_item_textright" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/wd_ye_t"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:src="@drawable/ic_navigate_next_black_24dp"/>-->
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/wd_item">
+                <TextView
+                    android:text="关注 :"
+                    style="@style/wd_item_textleft" />
+                <TextView
+                    android:id="@+id/ck_gz"
+                    android:text="3"
+                    style="@style/wd_item_textright" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/wd_gz_t"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:src="@drawable/ic_navigate_next_black_24dp"/>-->
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/wd_item">
+                <TextView
+                    android:text="收藏夹 :"
+                    style="@style/wd_item_textleft" />
+                <TextView
+                    android:id="@+id/ck_scj"
+                    android:text="2"
+                    style="@style/wd_item_textright" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/wd_scj_t"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:src="@drawable/ic_navigate_next_black_24dp"/>-->
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/wd_item">
+                <TextView
+                    android:text="完成数量 :"
+                    style="@style/wd_item_textleft" />
+                <TextView
+                    android:id="@+id/ck_wcsl"
+                    android:text="6"
+                    style="@style/wd_item_textright" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/wd_wcsl_t"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:src="@drawable/ic_navigate_next_black_24dp"/>-->
+            </RelativeLayout>
+
+<!--            <RelativeLayout style="@style/wd_item">-->
+<!--                <TextView-->
+<!--                    android:text="评分 :"-->
+<!--                    style="@style/wd_item_textleft" />-->
+<!--                <TextView-->
+<!--                    android:id="@+id/wd_pj"-->
+<!--                    android:text="4.7"-->
+<!--                    style="@style/wd_item_textright" />-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/wd_pj_t"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:layout_alignParentRight="true"-->
+<!--                    android:src="@drawable/ic_navigate_next_black_24dp"/>-->
+<!--            </RelativeLayout>-->
+
+            <RelativeLayout style="@style/wd_item">
+                <TextView
+                    android:text="个人简介 :"
+                    style="@style/wd_item_textleft" />
+                <TextView
+                    android:id="@+id/ck_grjj"
+                    android:text="无限接近死亡，更能领悟生存的真谛。"
+                    style="@style/wd_item_textright" />
+                <ImageView
+                    android:id="@+id/ck_grjj_t"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_navigate_next_black_24dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/ck_follow"
+                    android:text="关注"
+                    style="@style/anniu" />
+
+<!--                <Button-->
+<!--                    android:id="@+id/ck_return"-->
+<!--                    android:layout_below="@id/ck_follow"-->
+<!--                    android:layout_marginTop="100dp"-->
+<!--                    android:text="退出"-->
+<!--                    style="@style/anniu" />-->
+            </RelativeLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"/>
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

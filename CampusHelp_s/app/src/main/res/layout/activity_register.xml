@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".RegisterActivity"
+    android:layout_gravity="center">
+
+
+    <RelativeLayout
+        style="@style/dinglan"
+        android:id="@+id/register_top_bar">
+
+        <ImageView
+            android:id="@+id/zc_return"
+            android:src="@drawable/ic_navigate_before_black_24dp"
+            style="@style/fanhui" />
+
+        <TextView
+            android:text="注册"
+            style="@style/dinglan_text" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/register_top_bar"
+        android:layout_marginTop="1dp">
+
+         <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="40dp">
+
+             <RelativeLayout
+                android:id="@+id/rl_contents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginTop="6dp">
+
+                 <RelativeLayout
+                     android:id="@+id/rl_image"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginTop="24dp"
+                     android:paddingLeft="0dp"
+                     android:paddingRight="10dp"
+                     android:layout_marginLeft="40dp">
+
+                     <de.hdodenhof.circleimageview.CircleImageView
+                         android:id="@+id/iv_user_icon"
+                         android:layout_width="60dp"
+                         android:layout_height="60dp"
+                         android:layout_centerInParent="false"
+                         android:src="@drawable/default_user_icon"
+                         android:layout_marginTop="30dp"
+                         android:layout_marginLeft="20dp"/>
+
+                     <Button
+                         android:id="@+id/btn_change"
+                         android:layout_marginTop="20dp"
+                         android:layout_marginLeft="100dp"
+
+                         android:layout_width="200dp"
+                         android:layout_height="wrap_content"
+                         android:text="上传头像"
+                         android:onClick="uploadPhoto">
+                     </Button>
+
+                 </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_userId"
+                    android:layout_below="@+id/rl_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginTop="45dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <EditText
+                        android:id="@+id/et_userId"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="4dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:inputType="text"
+                        android:hint="请输入账号"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginEnd="48dp"
+                        android:maxLines="1"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_psw"
+                    android:layout_below="@+id/rl_userId"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <EditText
+                        android:id="@+id/et_psw"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:inputType="text"
+                        android:hint="请输入密码"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginEnd="48dp"
+                        android:maxLines="1"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_name"
+                    android:layout_below="@+id/rl_psw"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <EditText
+                        android:id="@+id/et_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:inputType="text"
+                        android:hint="昵称"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginEnd="48dp"
+                        android:maxLines="1"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_sex"
+                    android:layout_below="@+id/rl_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+                    <TextView
+                        android:layout_marginStart="48dp"
+                        android:layout_marginEnd="48dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="请选择性别"/>
+
+                    <Spinner
+                        android:id="@+id/sp_sex"
+                        android:layout_marginTop="30dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:entries="@array/sex"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginEnd="48dp">
+                    </Spinner>
+
+<!--                    <EditText-->
+<!--                        android:id="@+id/et_sex"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:layout_marginBottom="4dp"-->
+<!--                        android:layout_alignParentBottom="true"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:inputType="text"-->
+<!--                        android:hint="性别"-->
+<!--                        android:layout_marginStart="48dp"-->
+<!--                        android:layout_marginEnd="48dp"-->
+<!--                        android:maxLines="1"/>-->
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_phone"
+                    android:layout_below="@+id/rl_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <EditText
+                        android:id="@+id/et_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:inputType="text"
+                        android:hint="电话"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginEnd="48dp"
+                        android:maxLines="1"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_email"
+                    android:layout_below="@+id/rl_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <EditText
+                        android:id="@+id/et_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_gravity="center"
+                        android:inputType="text"
+                        android:hint="邮箱"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginEnd="48dp"
+                        android:maxLines="1"/>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rl_info"
+                    android:layout_below="@+id/rl_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="20dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp">
+
+                    <EditText
+                        android:id="@+id/et_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="center"
+                        android:inputType="text"
+                        android:hint="个人简介"
+                        android:layout_marginStart="48dp"
+                        android:layout_marginEnd="48dp"
+                        android:background="@drawable/yinying"
+                        />
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+             <RelativeLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginBottom="0dp"
+                 android:layout_marginTop="0dp"
+                 android:layout_weight="1"
+                 android:paddingLeft="10dp"
+                 android:paddingRight="10dp"
+                 android:layout_below="@+id/rl_contents">
+
+                 <Button
+                     android:text="注册"
+                     android:id="@+id/bt_register"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:layout_marginBottom="0dp"
+                     android:background="@color/colorPrimary"
+                     android:textColor="@android:color/white"
+                     android:layout_alignParentTop="true"
+                     android:layout_marginVertical="40dp"
+                     android:onClick="register"/>
+             </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

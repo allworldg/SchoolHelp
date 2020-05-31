@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CampusHelp_s</string>
+    <string name="title_square">广场</string>
+    <string name="title_mytask">我的任务</string>
+    <string name="title_my">我的信息</string>
+    <string name="title_submit_task">发布任务</string>
+</resources>

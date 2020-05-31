@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tool="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        style="@style/dinglan">
+
+        <ImageView
+            android:id="@+id/bj_return"
+            android:src="@drawable/ic_navigate_before_black_24dp"
+            style="@style/fanhui" />
+
+        <TextView
+            android:text="编辑个人信息"
+            style="@style/dinglan_text" />
+
+        <Button
+            android:id="@+id/bj_cz"
+            android:layout_width="68dp"
+            android:layout_height="48dp"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorPrimary"
+            android:text="重置"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout style="@style/wd_item">
+                <TextView
+                    android:text="昵称 :"
+                    style="@style/wd_item_textleft" />
+                <EditText
+                    android:id="@+id/bj_nc"
+                    android:text="浮世留尘"
+                    android:background="@drawable/yinying"
+                    android:inputType="text"
+                    style="@style/wd_item_textright" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/wd_item">
+                <TextView
+                    android:text="性别 :"
+                    style="@style/wd_item_textleft" />
+
+                <EditText
+                    android:id="@+id/bj_xb"
+                    style="@style/wd_item_textright"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="0dp"
+                    android:background="@drawable/yinying"
+                    android:inputType="text"
+                    android:text="男" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/wd_item">
+                <TextView
+                    android:text="手机号 :"
+                    style="@style/wd_item_textleft" />
+                <EditText
+                    android:id="@+id/bj_sjh"
+                    android:text="12345678910"
+                    android:inputType="text"
+                    android:background="@drawable/yinying"
+                    style="@style/wd_item_textright" />
+            </RelativeLayout>
+
+            <RelativeLayout style="@style/wd_item">
+                <TextView
+                    android:text="邮箱 :"
+                    style="@style/wd_item_textleft" />
+                <EditText
+                    android:id="@+id/bj_yx"
+                    android:text="123456789@qq.com"
+                    android:inputType="text"
+                    android:background="@drawable/yinying"
+                    style="@style/wd_item_textright" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="2dp"
+                android:background="@android:color/white">
+                <TextView
+                    android:text="个人简介 :"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="20dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp"
+                    android:gravity="center|start">
+                </TextView>
+                <EditText
+                    android:id="@+id/bj_grjj"
+                    android:text="无限接近死亡，更能领悟生存的真谛！"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="50dp"
+                    android:inputType="text"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp"
+                    android:gravity="start"
+                    android:background="@drawable/yinying"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:layout_weight="1">
+                <Button
+                    android:id="@+id/bj_bc"
+                    android:text="保存"
+                    style="@style/anniu" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

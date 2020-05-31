@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.task_detail.TaskDetailFragment">
+
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <RelativeLayout style="@style/dinglan">
+
+                <ImageView
+                    android:id="@+id/rwxq_return"
+                    android:src="@drawable/ic_navigate_before_black_24dp"
+                    style="@style/fanhui" />
+
+                <TextView
+                    style="@style/dinglan_text"
+                    android:text="任务详情" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginTop="2dp"
+                android:background="@android:color/white">
+                <ImageView
+                    android:id="@+id/rwxq_tx"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="12dp"
+                    android:background="@mipmap/ic_launcher"
+                    android:src="@drawable/image_style"
+                    />
+                <TextView
+                    android:id="@+id/rwxq_nc"
+                    android:text="发布者："
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginLeft="127dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp"
+                    android:gravity="center|start"
+                    />
+                <TextView
+                    android:id="@+id/rwxq_id"
+                    android:text="ID :1700301821"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="67dp"
+                    android:layout_marginLeft="127dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18dp"
+                    android:gravity="center|start" />
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentRight="true"
+                    android:text="1天前"
+                    android:textSize="14dp"
+                    android:textColor="#AAAAAA"/>
+
+                <TextView
+                    android:id="@+id/rwxq_wz"
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:layout_marginTop="110dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="有没有人能帮我拿个快递，食堂旁边菜鸟驿站的，详情私聊。"
+                    android:textSize="18dp"
+                    android:textColor="@android:color/black"/>
+                <View
+                    android:background="#AAAAAA"
+                    android:layout_height="3px"
+                    android:layout_width="match_parent"
+                    android:layout_below="@id/rwxq_wz">
+                </View>
+                <ImageView
+                    android:id="@+id/rwxq_tp"
+                    android:layout_width="170dp"
+                    android:layout_height="105dp"
+                    android:layout_marginTop="200dp"
+                    android:layout_marginLeft="10dp"
+                    android:src="@color/colorPrimary"/>
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="320dp"
+                    android:layout_marginLeft="35dp"
+                    android:text="类别:"
+                    android:textColor="#101010"
+                    android:textSize="17dp"/>
+                <TextView
+                    android:id="@+id/rwxq_lb"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/yinying"
+                    android:layout_marginTop="315dp"
+                    android:layout_marginLeft="96dp"
+                    android:text="跑腿"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:textColor="#888888"/>
+
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="360dp"
+                    android:layout_marginLeft="35dp"
+                    android:text="悬赏:"
+                    android:textColor="#101010"
+                    android:textSize="17dp"/>
+                <TextView
+                    android:id="@+id/rwxq_xs"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/yinying"
+                    android:layout_marginTop="355dp"
+                    android:layout_marginLeft="96dp"
+                    android:text="2"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:textColor="#888888"/>
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="400dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="任务状态:"
+                    android:textColor="#101010"
+                    android:textSize="17dp"/>
+                <TextView
+                    android:id="@+id/rwxq_rwzt"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/yinying"
+                    android:layout_marginTop="395dp"
+                    android:layout_marginLeft="96dp"
+                    android:text="已领取"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:textColor="#888888"/>
+
+                <TextView
+                    android:layout_width="80dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="440dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="剩余时间:"
+                    android:textColor="#101010"
+                    android:textSize="17dp"/>
+                <TextView
+                    android:id="@+id/rwxq_sysj"
+                    android:layout_width="180dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/yinying"
+                    android:layout_marginTop="435dp"
+                    android:layout_marginLeft="96dp"
+                    android:text="0 天   1 小时  21 分"
+                    android:textSize="18dp"
+                    android:gravity="center"
+                    android:textColor="#888888"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/rwxq_scrw"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="删除任务"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/white"
+                    android:background="#5AC8FA"
+                    />
+                <Button
+                    android:id="@+id/rwxq_wcrw"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="完成任务"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/white"
+                    android:background="#3291F8"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
+                <Button
+                    android:id="@+id/rwxq_sc"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="收藏"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/white"
+                    android:background="#5AC8FA"
+                    />
+                <Button
+                    android:id="@+id/rwxq_lq"
+                    android:layout_width="140dp"
+                    android:layout_height="50dp"
+                    android:text="领取"
+                    android:textSize="20dp"
+                    android:textColor="@android:color/white"
+                    android:background="#3291F8"
+                    />
+            </LinearLayout>
+            <View
+                android:layout_height="100dp"
+                android:layout_width="wrap_content"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/user_detail_replace"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_user_detail"
+        android:visibility="invisible"
+        android:background="#ffffff"/>
+
+<!--    <FrameLayout-->
+<!--        android:id="@+id/user_detail_replace"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        tools:layout="@layout/fragment_user_detail"-->
+<!--        android:visibility="invisible"-->
+<!--        android:background="#ffffff"/>-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/user_detail_replace"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:name="com.example.campushelp_s.ui.user_detail.UserDetailFragment"-->
+<!--        android:label="详情"-->
+<!--        tools:layout="@layout/fragment_user_detail" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
