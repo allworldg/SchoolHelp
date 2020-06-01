@@ -14,7 +14,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-
 import com.example.campushelp_s.R;
 import com.example.campushelp_s.databinding.PersonalMainFragBinding;
 import java.util.List;
@@ -28,6 +27,7 @@ import cn.bmob.v3.listener.DownloadFileListener;
 import cn.bmob.v3.listener.FindListener;
 
 public class Main_Information_Fragment extends Fragment/* implements View.OnClickListener*/ {
+
     private PersonalMainFragBinding binding;
     private User user;
     private com.example.campushelp_s.Model.userModel userModel;
@@ -56,6 +56,7 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        Log.d()
         refresh(user);
         binding.wdBj.setOnClickListener(Navigation
                 .createNavigateOnClickListener(R.id.action_navigation_my_to_edit_fragment));//个人信息编辑按钮
