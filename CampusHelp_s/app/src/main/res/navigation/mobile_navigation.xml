@@ -25,10 +25,14 @@
         tools:layout="@layout/fragment_my" >
         <action
             android:id="@+id/action_navigation_my_to_edit_fragment"
-            app:destination="@id/edit_fragment" />
+            app:destination="@id/edit_fragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit" />
         <action
             android:id="@+id/action_navigation_my_to_attention_fragment"
-            app:destination="@id/attention_fragment" />
+            app:destination="@id/attention_fragment"
+            app:enterAnim="@anim/fragment_fade_enter"
+            app:exitAnim="@anim/fragment_fade_exit" />
     </fragment>
 
     <fragment

@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.campushelp_s.R;
+import com.example.campushelp_s.databinding.PersonalMainFragBinding;
 
 import java.util.List;
 
@@ -31,9 +32,9 @@ import cn.bmob.v3.listener.DownloadFileListener;
 import cn.bmob.v3.listener.FindListener;
 
 public class Main_Information_Fragment extends Fragment/* implements View.OnClickListener*/ {
+    private PersonalMainFragBinding binding;
     private View view;
     private User user;
-    private Fragment currentFragment; //当前fragment对象
     private com.example.campushelp_s.Model.userModel userModel;
     private ImageView image_edit;
     private ImageView image_head;
@@ -43,18 +44,10 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
     private TextView tv_user_phone;
     private TextView tv_user_email;
     private TextView tv_user_account;
-    private ImageView image_user_account_record;
-    private TextView tv_user_focus;
-    private ImageView image_user_focus_show;
     private TextView tv_user_favorite;
-    private ImageView image_user_collection_show;
     private TextView tv_user_finish_count;
-    private ImageView image_user_finish_count_show;
-    private TextView tv_user_grade;
-    private ImageView image_user_grade;
     private TextView tv_user_introduction;
-    private ImageView image_user_introduction_edit;
-    private Button btn_loginout;
+
     private String TAG = "TAG";
     private int number;
     private String num;
@@ -63,12 +56,10 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.personal_main_frag, container, false);
+        binding = PersonalMainFragBinding.inflate(getLayoutInflater());
         userModel = new ViewModelProvider(getActivity()).get(com.example.campushelp_s.Model.userModel.class);
         user = (User) getActivity().getIntent().getSerializableExtra("user");
         userModel.setUser(user);
-        currentFragment = Main_Information_Fragment.this;
-        Log.d("username", user.getName());
         refresh(user);
         collection_Number();
         follow_Number();
@@ -76,75 +67,28 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
 
         mRoot=view;
         mActivity=getActivity();
-        image_edit.setOnClickListener(new View.OnClickListener() {
+        binding.wdBj.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 jump_to_edit();
             }
         });
 
-        image_user_collection_show.setOnClickListener(new View.OnClickListener() {
+        binding.wdScjT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 jump_to_collection();
             }
         });
 
-        image_user_focus_show.setOnClickListener(new View.OnClickListener() {
+       binding.wdGzT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 jump_to_attention();
             }
         });
-
-//        image_user_finish_count_show.setOnClickListener(this);
-//        image_user_grade.setOnClickListener(this);
-        // btn_loginout.setOnClickListener(this);
-        return view;
+        return binding.getRoot();
     }
-
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        super.onHiddenChanged(hidden);
-        if (!hidden) {
-            currentFragment = Main_Information_Fragment.this;
-            userModel = new ViewModelProvider(getActivity()).get(com.example.campushelp_s.Model.userModel.class);
-            userModel.getUser();
-            refresh(user);
-        }
-
-    }
-
-//    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.wd_bj://如果点击的是设置界面则跳转
-//                Log.d("test", "test");
-//                Edit_fragment edit_fragment = new Edit_fragment();
-//                showFragment(edit_fragment);
-//                break;
-//            case R.id.wd_scj_t:
-//                Collection_Fragment collection_fragment = new Collection_Fragment();
-//                showFragment(collection_fragment);
-//                break;
-//            case R.id.wd_wcsl_t:
-//                //跳转到主菜单的任务界面
-//                break;
-//            case R.id.wd_pj_t:
-//                //跳转到主菜单的任务界面
-//                break;
-//                case R.id.wd_gz_t:
-//                    Attention_fragment attention_fragment = new Attention_fragment(user);
-//                    showFragment(attention_fragment);
-//                    break;
-//            case R.id.wd_tcdl:
-//                getActivity().finish();
-//                break;
-//            default:
-//                break;
-//
-//        }
-//    }
 
     /**
      * 用于初始化以及之后编辑子碎片返回时方便刷新
@@ -152,8 +96,6 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
      * @param user
      */
     public void refresh(User user) {
-//        view.setVisibility(View.VISIBLE);//使当前主界面可见
-        image_edit = view.findViewById(R.id.wd_bj);
         image_head = view.findViewById(R.id.wd_tx);
         tv_user_name = view.findViewById(R.id.wd_name);
         tv_user_ID = view.findViewById(R.id.tv_user_ID);
@@ -161,18 +103,10 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
         tv_user_phone = view.findViewById(R.id.wd_sjh);
         tv_user_email = view.findViewById(R.id.wd_yx);
         tv_user_account = view.findViewById(R.id.wd_ye);
-        //image_user_account_record = view.findViewById(R.id.wd_ye_t);
-        tv_user_focus = view.findViewById(R.id.wd_gz);
-        image_user_focus_show = view.findViewById(R.id.wd_gz_t);
+
         tv_user_favorite = view.findViewById(R.id.wd_scj);
-        image_user_collection_show = view.findViewById(R.id.wd_scj_t);
         tv_user_finish_count = view.findViewById(R.id.wd_wcsl);
-        //image_user_finish_count_show = view.findViewById(R.id.wd_wcsl_t);
-        //tv_user_grade = view.findViewById(R.id.wd_pj);
-        //image_user_grade = view.findViewById(R.id.wd_pj_t);
         tv_user_introduction = view.findViewById(R.id.wd_grjj);
-        //image_user_introduction_edit = view.findViewById(R.id.wd_grjj_t);
-        btn_loginout = view.findViewById(R.id.wd_tcdl);
         image_head = view.findViewById(R.id.wd_tx);
 
         //显示user数据
@@ -182,15 +116,10 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
         tv_user_phone.setText(user.getPhone());
         tv_user_email.setText(user.getEmail());
         tv_user_account.setText(user.getBalance().toString()+" U币");
-//        collection_Number();
-//        Log.d("number",""+number);
         num = userModel.collection_Number();
         tv_user_favorite.setText(""+num);
         tv_user_finish_count.setText(user.getDoneNumber().toString());
         tv_user_introduction.setText(user.getInfo());
-
-
-        //testremovefans();
 
         BmobFile icon = user.getImage();
         if(icon!=null){
@@ -211,34 +140,6 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
             });
         }else{
             image_head.setImageResource(R.drawable.default_user_icon);
-        }
-
-    }
-
-    /**
-     * 用来显示指定的fragment，方便复用
-     *
-     * @param fragment
-     */
-    public void showFragment(Fragment fragment) {
-
-        FragmentTransaction transaction =
-                getFragmentManager().beginTransaction();
-        transaction.hide(currentFragment);//隐藏当前fragment
-
-        if (!fragment.isAdded()) {
-            transaction
-                    .addToBackStack(null)
-                    .add(R.id.fl_replace, fragment)//如果没有添加过则先添加在显示
-                    .hide(currentFragment)
-                    .show(fragment)
-                    .commit();
-        } else {
-            transaction
-                    .show(fragment)
-                    .hide(currentFragment)
-                    .commit();
-
         }
 
     }
