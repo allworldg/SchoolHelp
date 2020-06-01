@@ -41,9 +41,6 @@ public class Attention_fragment extends Fragment {
     private View mRoot;
     private Activity mActivity;
 
-    Attention_fragment(User user){
-        this.user=user;
-    }
 
     @Nullable
     @Override
@@ -63,7 +60,7 @@ public class Attention_fragment extends Fragment {
         mRoot=view;
         FrameLayout replace = mActivity.findViewById(R.id.personal_replace);
         replace.setVisibility(View.VISIBLE);
-        initData();
+//        initData();
         return view;
     }
 
