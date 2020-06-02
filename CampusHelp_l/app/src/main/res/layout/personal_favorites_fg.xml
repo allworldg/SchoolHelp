@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/collection_top_bar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/list_favorites"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+        <RelativeLayout
+            android:id="@+id/favorites_title"
+            style="@style/dinglan">
+
+            <ImageView
+                android:id="@+id/scj_return"
+                android:src="@drawable/ic_navigate_before_black_24dp"
+                style="@style/fanhui" />
+
+            <TextView
+                android:text="收藏夹"
+                style="@style/dinglan_text" />
+
+        </RelativeLayout> >
+
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_favorites"
+        app:layout_constraintTop_toBottomOf="@id/list_favorites"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <FrameLayout
+        android:id="@+id/collection_replace"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:visibility="invisible"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_square"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/title_square" />
+
+    <item
+        android:id="@+id/navigation_mytask"
+        android:icon="@drawable/ic_assignment_black_24dp"
+        android:title="@string/title_mytask" />
+
+
+    <item
+        android:id="@+id/navigation_my"
+        android:icon="@drawable/ic_person_outline_black_24dp"
+        android:title="@string/title_my" />
+
+    <item
+        android:id="@+id/navigation_submit_task"
+        android:icon="@drawable/ic_add_black_24dp"
+        android:title="@string/title_submit_task" />
+
+</menu>

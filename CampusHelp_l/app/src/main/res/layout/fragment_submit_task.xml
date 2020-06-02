@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout style="@style/dinglan">
+
+        <TextView
+            style="@style/dinglan_text"
+            android:text="发布" />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:padding="10dp"
+                android:background="@android:color/white">
+                <EditText
+                    android:id="@+id/fb_bt"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@null"
+                    android:hint="标题..."/>
+                <View
+                    android:background="#AAAAAA"
+                    android:layout_height="3px"
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/fb_bt">
+                </View>
+                <EditText
+                    android:id="@+id/fb_text"
+                    android:layout_marginTop="40dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@null"
+                    android:inputType="text"
+                    android:hint="任务内容..."
+                    android:gravity="start"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="1080dp"
+                android:background="@android:color/white"
+                android:layout_marginTop="3dp">
+                <ImageView
+                    android:id="@+id/fb_picture"
+                    android:layout_width="105dp"
+                    android:layout_height="105dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="#F5F5F5"
+                    android:src="@drawable/ic_add_black_24dp"/>
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="150dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="类别:"
+                    android:textColor="#101010"
+                    android:textSize="17dp"/>
+                <Spinner
+                    android:id="@+id/fb_lb"
+                    android:layout_width="220dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/biankuang"
+                    android:layout_marginTop="146dp"
+                    android:layout_marginLeft="76dp"
+                    android:entries="@array/tasksort"/>
+                <TextView
+                    android:layout_width="50dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="190dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="限期:"
+                    android:textColor="#101010"
+                    android:textSize="17dp"/>
+
+
+                <DatePicker
+                    android:id="@+id/fb_datepicker"
+                    android:layout_width="300dp"
+                    android:layout_height="410dp"
+                    android:layout_marginTop="186dp"
+                    android:layout_marginLeft="76dp"
+                    android:background="@drawable/biankuang"
+                    android:headerBackground="@color/colorPrimary"
+                    android:datePickerMode="calendar"
+                    android:calendarViewShown="false">
+                </DatePicker>
+
+                <TimePicker
+                    android:id="@+id/fb_timepicker"
+                    android:layout_width="300dp"
+                    android:layout_height="390dp"
+                    android:layout_marginTop="600dp"
+                    android:layout_marginLeft="76dp"
+                    android:background="@drawable/biankuang"
+                    android:headerBackground="@color/colorPrimary"
+                    android:timePickerMode="clock"
+                    android:calendarViewShown="false"/>
+
+                <TextView
+
+                    android:layout_width="50dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="1028dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="悬赏:"
+                    android:textColor="#101010"
+                    android:textSize="17dp"/>
+                <EditText
+
+                    android:id="@+id/fb_xs"
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/biankuang"
+                    android:layout_marginTop="1024dp"
+                    android:layout_marginLeft="76dp" />
+                <TextView
+
+                    android:layout_width="50dp"
+                    android:layout_height="25dp"
+                    android:layout_marginTop="1028dp"
+                    android:layout_marginLeft="140dp"
+                    android:text="U币"
+                    android:textSize="16dp"
+                    android:textColor="#888888"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:layout_weight="1">
+                <Button
+                    android:id="@+id/fb_df"
+                    android:text="发布"
+                    style="@style/anniu" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="60dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

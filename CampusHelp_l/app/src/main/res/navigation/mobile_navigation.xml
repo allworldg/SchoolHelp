@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_square">
+
+
+    <fragment
+        android:id="@+id/navigation_square"
+        android:name="com.example.campushelp_s.ui.square.SquareFragment"
+        android:label="@string/title_square"
+        tools:layout="@layout/fragment_square" />
+
+    <fragment
+        android:id="@+id/navigation_mytask"
+        android:name="com.example.campushelp_s.ui.mytask.MyTaskFragment"
+        android:label="@string/title_mytask"
+        tools:layout="@layout/fragment_mytask" />
+
+    <fragment
+        android:id="@+id/navigation_my"
+        android:name="com.example.campushelp_s.fragment.Main_Information_Fragment"
+        android:label="@string/title_my"
+        tools:layout="@layout/fragment_my" />
+
+    <fragment
+        android:id="@+id/navigation_submit_task"
+        android:name="com.example.campushelp_s.ui.submit_task.SubmitTaskFragment"
+        android:label="@string/title_my"
+        tools:layout="@layout/fragment_submit_task" />
+</navigation>
