@@ -16,11 +16,6 @@
 
     <RelativeLayout style="@style/dinglan">
 
-        <ImageView
-            android:id="@+id/dl_return"
-            android:src="@drawable/ic_navigate_before_black_24dp"
-            style="@style/fanhui" />
-
         <TextView
             android:text="校园互助系统"
             style="@style/dinglan_text" />

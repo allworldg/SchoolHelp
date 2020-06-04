@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.example.campushelp_s.ViewModel.UserViewModel;
 import com.example.campushelp_s.R;
 import com.example.campushelp_s.databinding.PersonalMainFragBinding;
 import java.util.List;
@@ -28,9 +29,10 @@ import cn.bmob.v3.listener.DownloadFileListener;
 import cn.bmob.v3.listener.FindListener;
 
 public class Main_Information_Fragment extends Fragment/* implements View.OnClickListener*/ {
+    private static String TAG = "TAG";
     private PersonalMainFragBinding binding;
     private User user;
-    private com.example.campushelp_s.Model.userModel userModel;
+    private UserViewModel UserViewModel;
     private int number;
     private String num;
     private View mRoot;
@@ -39,13 +41,14 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = PersonalMainFragBinding.inflate(getLayoutInflater());
-        userModel = new ViewModelProvider(getActivity()).get(com.example.campushelp_s.Model.userModel.class);
+        UserViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
         user = (User) getActivity().getIntent().getSerializableExtra("user");
-        userModel.setUser(user);
+        UserViewModel.setUser(user);
         collection_Number();
         follow_Number();
         mRoot=binding.getRoot();
         mActivity=getActivity();
+        Log.d(TAG,"oncreateview");
         return binding.getRoot();
     }
 
@@ -56,6 +59,7 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        Log.d(TAG,"onactivitycreated");
         refresh(user);
         binding.wdBj.setOnClickListener(Navigation
                 .createNavigateOnClickListener(R.id.action_navigation_my_to_edit_fragment));//个人信息编辑按钮
@@ -74,6 +78,12 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
         });//关注跳转按钮
     }
 
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d(TAG,"onPause");
+    }
+
     /**
      * 用于初始化以及之后编辑子碎片返回时方便刷新
      *
@@ -81,7 +91,7 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
      */
     public void refresh(User user) {
 //        tv_user_account.setText(user.getBalance().toString()+" U币");
-        num = userModel.collection_Number();
+        num = UserViewModel.collection_Number();
         BmobFile icon = user.getImage();
         if(icon!=null){
             icon.download(new DownloadFileListener() {
