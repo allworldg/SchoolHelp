@@ -19,6 +19,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.campushelp_s.ViewModel.UserViewModel;
 import com.example.campushelp_s.R;
 import com.example.campushelp_s.UserAdapter;
 
@@ -35,7 +36,7 @@ public class Attention_fragment extends Fragment {
     private View view;
     private RecyclerView rvlist;
     private User user;
-    private com.example.campushelp_s.Model.userModel userModel;
+    private UserViewModel UserViewModel;
     private ImageView iv_return;
     private List<User> userlist = new ArrayList<>();
     private View mRoot;
@@ -54,7 +55,7 @@ public class Attention_fragment extends Fragment {
                 getActivity().onBackPressed();
             }
         });
-        userModel = new ViewModelProvider(getActivity()).get(com.example.campushelp_s.Model.userModel.class);
+        UserViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
         //user = userModel.getUser();
         mActivity=getActivity();
         mRoot=view;

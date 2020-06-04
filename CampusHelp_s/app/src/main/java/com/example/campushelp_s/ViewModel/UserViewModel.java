@@ -1,7 +1,8 @@
-package com.example.campushelp_s.Model;
+package com.example.campushelp_s.ViewModel;
 
 import android.util.Log;
 
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 
@@ -14,14 +15,17 @@ import cn.bmob.v3.datatype.BmobPointer;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
-public class userModel extends ViewModel {
-
+public class UserViewModel extends ViewModel {
+    private MutableLiveData<User> mUser;
     private User user;
     private String num = "";
-    public User getUser(){
-        if(user ==  null){
-            user = new User();
+    public void init(){
+        if(mUser != null){
+            return;
         }
+
+    }
+    public User getUser(){
         return user;
     }
 

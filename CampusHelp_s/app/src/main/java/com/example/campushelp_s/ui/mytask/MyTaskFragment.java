@@ -150,14 +150,16 @@ public class MyTaskFragment extends Fragment {
                 case 0:
                     List<Task> list = (List<Task>) msg.obj;
                     taskList = list;
-
-
-
                     TaskAdapter taskAdapter=new TaskAdapter(getContext(),
                             R.layout.list_item_task,taskList);
                     LinearLayoutManager llm =new LinearLayoutManager(getContext());
                     getContext();
-                    rvList=getView().findViewById(R.id.rv_task);
+                    try {
+                        rvList = getView().findViewById(R.id.rv_task);
+                    }catch (Exception e){
+                        Log.d("rvlisterror",e.toString());
+                        Log.d("rvlisterror",getView().toString());
+                    }
                     rvList.setLayoutManager(llm);
                     taskAdapter.setOnItemClickListener(new TaskAdapter.OnRecyclerViewItemClickListener() {
                         @Override

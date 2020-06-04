@@ -21,6 +21,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.campushelp_s.ViewModel.UserViewModel;
 import com.example.campushelp_s.R;
 import com.example.campushelp_s.TaskAdapter;
 
@@ -39,7 +40,7 @@ public class Collection_Fragment extends Fragment {
     private RecyclerView rvList;
     private ImageView iv_return;
     private Activity mActivity;
-    com.example.campushelp_s.Model.userModel userModel;//存储登陆用户的对象
+    UserViewModel UserViewModel;//存储登陆用户的对象
     User user;//当前登陆的用户对象
 
     private View mRoot;
@@ -56,8 +57,8 @@ public class Collection_Fragment extends Fragment {
                 getActivity().onBackPressed();
             }
         });
-        userModel = new ViewModelProvider(getActivity()).get(com.example.campushelp_s.Model.userModel.class);//获取到共享的userModel
-        user = userModel.getUser();//获取到当前登陆用户对象
+        UserViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);//获取到共享的userModel
+        user = UserViewModel.getUser();//获取到当前登陆用户对象
 
         mRoot=view;
         mActivity=getActivity();
