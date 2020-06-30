@@ -43,7 +43,6 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
         binding = PersonalMainFragBinding.inflate(getLayoutInflater());
         UserViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
         user = (User) getActivity().getIntent().getSerializableExtra("user");
-        UserViewModel.setUser(user);
         collection_Number();
         follow_Number();
         mRoot=binding.getRoot();
@@ -76,6 +75,12 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
                 navController.navigate(R.id.action_navigation_my_to_attention_fragment);
             }
         });//关注跳转按钮
+        binding.wdTcdl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
     }
 
     @Override
@@ -90,8 +95,16 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
      * @param user
      */
     public void refresh(User user) {
-//        tv_user_account.setText(user.getBalance().toString()+" U币");
-        num = UserViewModel.collection_Number();
+
+        binding.wdName.setText(user.getName());
+        binding.tvUserID.setText(user.getUserID());
+        binding.wdXb.setText(user.getSex());
+        binding.wdSjh.setText(user.getPhone());
+        binding.wdYx.setText(user.getEmail()+" U币");
+        binding.wdYe.setText(user.getBalance().toString());
+        binding.wdWcsl.setText(user.getDoneNumber().toString());
+        binding.wdGrjj.setText(user.getInfo());
+
         BmobFile icon = user.getImage();
         if(icon!=null){
             icon.download(new DownloadFileListener() {
@@ -165,23 +178,6 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
             }
         });
 
-    }
-
-
-
-    //跳转到编辑页面
-    public void jump_to_edit(){
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        //String textItem =  ((TextView) view).getText().toString();
-        Edit_fragment edit_fragment = new Edit_fragment();
-        Bundle bundle = new Bundle();
-        bundle.putString("currentUserObjectId", user.getObjectId());//原来是注释掉的
-        edit_fragment.setArguments(bundle);
-        transaction
-                .addToBackStack(null)  //将当前fragment加入到返回栈中
-                .add(R.id.personal_replace,edit_fragment)
-                .show(edit_fragment)
-                .commit();
     }
 
     //跳转到收藏页面

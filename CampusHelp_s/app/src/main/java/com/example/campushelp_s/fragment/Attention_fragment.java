@@ -56,11 +56,9 @@ public class Attention_fragment extends Fragment {
             }
         });
         UserViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
-        //user = userModel.getUser();
+        user = UserViewModel.getUser();
         mActivity=getActivity();
         mRoot=view;
-        FrameLayout replace = mActivity.findViewById(R.id.personal_replace);
-        replace.setVisibility(View.VISIBLE);
         initData();
         return view;
     }
