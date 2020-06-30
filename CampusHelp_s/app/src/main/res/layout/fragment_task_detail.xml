@@ -36,14 +36,13 @@
                 android:layout_height="500dp"
                 android:layout_marginTop="2dp"
                 android:background="@android:color/white">
-                <ImageView
+                <com.example.campushelp_s.view.CircleImageView
                     android:id="@+id/rwxq_tx"
                     android:layout_width="90dp"
                     android:layout_height="90dp"
                     android:layout_marginTop="12dp"
                     android:layout_marginLeft="12dp"
-                    android:background="@mipmap/ic_launcher"
-                    android:src="@drawable/image_style"
+                    android:src="@mipmap/ic_launcher"
                     />
                 <TextView
                     android:id="@+id/rwxq_nc"

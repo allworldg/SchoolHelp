@@ -42,14 +42,13 @@
                 android:layout_marginTop="1dp"
                 android:background="#2979FF">
 
-                <ImageView
+                <com.example.campushelp_s.view.CircleImageView
                     android:id="@+id/wd_tx"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@mipmap/ic_launcher"
-                    android:src="@drawable/image_style_green" />
+                    android:src="@mipmap/ic_launcher" />
 
                 <TextView
                     android:id="@+id/wd_name"

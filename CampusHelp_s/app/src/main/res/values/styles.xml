@@ -10,21 +10,21 @@
 
     <style name="dinglan">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_height">40dp</item>
         <item name="android:background">@color/colorPrimary</item>
     </style>
 
     <style name="fanhui">
-        <item name="android:layout_width">48dp</item>
-        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">35dp</item>
+        <item name="android:layout_height">35dp</item>
         <item name="android:layout_centerVertical">true</item>
     </style>
 
     <style name="dinglan_text">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">44dp</item>
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textSize">30dp</item>
+        <item name="android:textSize">22dp</item>
         <item name="android:textStyle">italic|bold</item>
         <item name="android:gravity">center</item>
         <item name="android:layout_centerInParent">true</item>
@@ -37,13 +37,11 @@
     </style>
 
     <style name="anniu">
-        <item name="android:textSize">18dp</item>
+        <item name="android:textSize">22dp</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:background">@color/colorButton</item>
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginLeft">10dp</item>
-        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_width">280dp</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:layout_marginTop">32dp</item>
         <item name="android:layout_alignParentTop">true</item>
     </style>
@@ -51,25 +49,25 @@
     <style name="wd_item">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">50dp</item>
-        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:layout_marginTop">3dp</item>
         <item name="android:background">@android:color/white</item>
     </style>
 
     <style name="wd_item_textleft">
         <item name="android:layout_width">150dp</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginLeft">17dp</item>
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">17dp</item>
         <item name="android:gravity">center|start</item>
     </style>
 
     <style name="wd_item_textright">
         <item name="android:layout_width">200dp</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:layout_marginLeft">170dp</item>
+        <item name="android:layout_marginLeft">160dp</item>
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:textSize">20dp</item>
+        <item name="android:textSize">17dp</item>
         <item name="android:singleLine">true</item>
         <item name="android:gravity">center_vertical|start</item>
     </style>

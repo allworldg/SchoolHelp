@@ -11,12 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="160dp">
 
-        <ImageView
+        <com.example.campushelp_s.view.CircleImageView
             android:id="@+id/rwx_tx"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@mipmap/ic_launcher"
-            android:src="@drawable/image_style"/>
+            android:src="@mipmap/ic_launcher"/>
         <TextView
             android:id="@+id/rwx_nc"
             android:layout_width="120dp"
