@@ -89,7 +89,7 @@ public class Task extends BmobObject {
         this.taskId = taskId;
     }
 
-    public BmobDate  getDeadline(){
+    public BmobDate getDeadline(){
         return deadline;
     }
 

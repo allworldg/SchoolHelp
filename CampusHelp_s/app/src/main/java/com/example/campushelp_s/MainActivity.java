@@ -2,9 +2,12 @@ package com.example.campushelp_s;
 
 import android.os.Bundle;
 
+import com.example.campushelp_s.ViewModel.UserViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavArgument;
 import androidx.navigation.NavController;
 import androidx.navigation.NavGraph;
@@ -19,12 +22,15 @@ public class MainActivity extends AppCompatActivity {
 
     private User currentUser;
     private String currentUserObjectId;
-
+    private UserViewModel userViewModel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         currentUser = (User)getIntent().getSerializableExtra("user");
+        userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        userViewModel.setUser(currentUser);//传入共享的值
+
         currentUserObjectId=currentUser.getObjectId();
         if(getSupportActionBar()!=null){
             getSupportActionBar().hide();

@@ -61,7 +61,7 @@ public class Attention_fragment extends Fragment {
         mRoot=view;
         FrameLayout replace = mActivity.findViewById(R.id.personal_replace);
         replace.setVisibility(View.VISIBLE);
-//        initData();
+        initData();
         return view;
     }
 
