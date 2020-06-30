@@ -51,8 +51,6 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FindListener;
 
 public class SquareFragment extends Fragment {
-
-
     private List<Task> taskList = new ArrayList<>();
     private RecyclerView rvList;
     private SquareViewModel squareViewModel;

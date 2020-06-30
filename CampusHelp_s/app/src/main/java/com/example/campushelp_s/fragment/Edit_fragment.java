@@ -19,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 
+import com.example.campushelp_s.ViewModel.UserViewModel;
 import com.example.campushelp_s.R;
 
 import bean.User;
@@ -37,7 +38,7 @@ public class Edit_fragment extends Fragment implements View.OnClickListener {
 
     private View view;
     private User user;
-    private com.example.campushelp_s.Model.userModel userModel;
+    private UserViewModel UserViewModel;
 
     private View mRoot;
     private Activity mActivity;
@@ -47,8 +48,8 @@ public class Edit_fragment extends Fragment implements View.OnClickListener {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.personal_edit_fg, container, false);
-        userModel = new ViewModelProvider(getActivity()).get(com.example.campushelp_s.Model.userModel.class);//同一个活动下碎片之间共享usermodel里的user数据。
-        user = userModel.getUser();//获取当前user对象
+        UserViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);//同一个活动下碎片之间共享usermodel里的user数据。
+        user = UserViewModel.getUser();//获取当前user对象
         currentFragment = Edit_fragment.this;
         refresh(user);
 
@@ -94,8 +95,8 @@ public class Edit_fragment extends Fragment implements View.OnClickListener {
         super.onHiddenChanged(hidden);
         if (!hidden) {
             currentFragment = Edit_fragment.this;
-            userModel = new ViewModelProvider(getActivity()).get(com.example.campushelp_s.Model.userModel.class);
-            userModel.getUser();
+            UserViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
+            UserViewModel.getUser();
             refresh(user);
         }
     }
@@ -121,7 +122,7 @@ public class Edit_fragment extends Fragment implements View.OnClickListener {
                         getActivity().getIntent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     }
                     Toast.makeText(getActivity(), "更新成功", Toast.LENGTH_SHORT).show();
-                    userModel.setUser(user);//更新本地user数据，方便更新其他碎片中的信息
+                    UserViewModel.setUser(user);//更新本地user数据，方便更新其他碎片中的信息
                 } else {
                     if(getActivity() == null){
                         getActivity().getIntent().addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

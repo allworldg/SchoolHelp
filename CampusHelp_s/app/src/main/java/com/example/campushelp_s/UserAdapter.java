@@ -14,6 +14,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.campushelp_s.ViewModel.UserViewModel;
+
 import java.util.List;
 
 import bean.User;
@@ -31,7 +33,7 @@ public class UserAdapter extends RecyclerView.Adapter <UserAdapter.ViewHolder>{
     private int resourceId;
     private View view;
     private User loginUser;
-    private com.example.campushelp_s.Model.userModel userModel;
+    private UserViewModel UserViewModel;
     public UserAdapter(User user,Context context, int resourceId, List<User> data){
         this.mContext=context;
         this.mUserData=data;

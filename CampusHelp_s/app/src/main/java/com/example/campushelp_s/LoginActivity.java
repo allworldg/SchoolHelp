@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
        binding.dlDl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(LoginActivity.this,"登陆ing......",Toast.LENGTH_SHORT).show();
                 findUser(LoginActivity.this,binding.dlZh,binding.dlMm);
             }
         });

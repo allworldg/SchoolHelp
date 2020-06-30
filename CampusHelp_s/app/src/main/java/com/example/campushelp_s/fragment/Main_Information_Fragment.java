@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
+import com.example.campushelp_s.ViewModel.UserViewModel;
 import com.example.campushelp_s.R;
 import com.example.campushelp_s.databinding.PersonalMainFragBinding;
 import java.util.List;
@@ -28,9 +29,10 @@ import cn.bmob.v3.listener.DownloadFileListener;
 import cn.bmob.v3.listener.FindListener;
 
 public class Main_Information_Fragment extends Fragment/* implements View.OnClickListener*/ {
+    private static String TAG = "TAG";
     private PersonalMainFragBinding binding;
     private User user;
-    private com.example.campushelp_s.Model.userModel userModel;
+    private UserViewModel UserViewModel;
     private int number;
     private String num;
     private View mRoot;
@@ -39,13 +41,13 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         binding = PersonalMainFragBinding.inflate(getLayoutInflater());
-        userModel = new ViewModelProvider(getActivity()).get(com.example.campushelp_s.Model.userModel.class);
+        UserViewModel = new ViewModelProvider(getActivity()).get(UserViewModel.class);
         user = (User) getActivity().getIntent().getSerializableExtra("user");
-        userModel.setUser(user);
         collection_Number();
         follow_Number();
         mRoot=binding.getRoot();
         mActivity=getActivity();
+        Log.d(TAG,"oncreateview");
         return binding.getRoot();
     }
 
@@ -56,6 +58,7 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        Log.d(TAG,"onactivitycreated");
         refresh(user);
         binding.wdBj.setOnClickListener(Navigation
                 .createNavigateOnClickListener(R.id.action_navigation_my_to_edit_fragment));//个人信息编辑按钮
@@ -72,6 +75,18 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
                 navController.navigate(R.id.action_navigation_my_to_attention_fragment);
             }
         });//关注跳转按钮
+        binding.wdTcdl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+            }
+        });
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.d(TAG,"onPause");
     }
 
     /**
@@ -80,8 +95,16 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
      * @param user
      */
     public void refresh(User user) {
-//        tv_user_account.setText(user.getBalance().toString()+" U币");
-        num = userModel.collection_Number();
+
+        binding.wdName.setText(user.getName());
+        binding.tvUserID.setText(user.getUserID());
+        binding.wdXb.setText(user.getSex());
+        binding.wdSjh.setText(user.getPhone());
+        binding.wdYx.setText(user.getEmail()+" U币");
+        binding.wdYe.setText(user.getBalance().toString());
+        binding.wdWcsl.setText(user.getDoneNumber().toString());
+        binding.wdGrjj.setText(user.getInfo());
+
         BmobFile icon = user.getImage();
         if(icon!=null){
             icon.download(new DownloadFileListener() {
@@ -155,23 +178,6 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
             }
         });
 
-    }
-
-
-
-    //跳转到编辑页面
-    public void jump_to_edit(){
-        FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        //String textItem =  ((TextView) view).getText().toString();
-        Edit_fragment edit_fragment = new Edit_fragment();
-        Bundle bundle = new Bundle();
-        bundle.putString("currentUserObjectId", user.getObjectId());//原来是注释掉的
-        edit_fragment.setArguments(bundle);
-        transaction
-                .addToBackStack(null)  //将当前fragment加入到返回栈中
-                .add(R.id.personal_replace,edit_fragment)
-                .show(edit_fragment)
-                .commit();
     }
 
     //跳转到收藏页面
