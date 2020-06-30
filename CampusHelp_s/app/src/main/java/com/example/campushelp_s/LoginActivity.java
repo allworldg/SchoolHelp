@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
                 findUser(LoginActivity.this,binding.dlZh,binding.dlMm);
             }
         });
-        binding.dlZh.setOnClickListener(new View.OnClickListener() {
+        binding.dlZczh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 jump_to_register();

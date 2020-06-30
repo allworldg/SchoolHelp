@@ -32,7 +32,7 @@
             android:id="@+id/dl_tx"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:background="@mipmap/ic_launcher"
+            android:background="@mipmap/ic_logo"
             android:src="@drawable/image_style"
             android:layout_centerInParent="true" />
 

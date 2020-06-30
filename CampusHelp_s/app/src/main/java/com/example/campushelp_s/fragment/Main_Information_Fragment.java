@@ -1,6 +1,7 @@
 package com.example.campushelp_s.fragment;
 
 import android.app.Activity;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -113,7 +114,7 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
                     if(e!=null){
                         Log.d("downloadIcon", e.toString());
                     }else{
-//                        image_head.setImageBitmap(BitmapFactory.decodeFile(s));
+                        binding.wdTx.setImageBitmap(BitmapFactory.decodeFile(s));
                     }
                 }
 
@@ -123,7 +124,7 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
                 }
             });
         }else{
-//            image_head.setImageResource(R.drawable.default_user_icon);
+            binding.wdTx.setImageResource(R.drawable.default_user_icon);
         }
 
     }
