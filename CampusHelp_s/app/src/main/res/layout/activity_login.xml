@@ -28,12 +28,11 @@
         android:layout_height="wrap_content"
         android:layout_weight="1">
 
-        <ImageView
+        <com.example.campushelp_s.view.CircleImageView
             android:id="@+id/dl_tx"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:background="@mipmap/ic_logo"
-            android:src="@drawable/image_style"
+            android:src="@mipmap/ic_logo"
             android:layout_centerInParent="true" />
 
     </RelativeLayout>
@@ -135,7 +134,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="120dp"
+        android:gravity="center_horizontal"
         android:layout_marginBottom="32dp"
         android:layout_weight="1">
         <Button

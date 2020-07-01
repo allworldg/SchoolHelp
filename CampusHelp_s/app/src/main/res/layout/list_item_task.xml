@@ -9,48 +9,113 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp">
+        android:layout_height="wrap_content">
 
-        <ImageView
+        <com.example.campushelp_s.view.CircleImageView
             android:id="@+id/rwx_tx"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:background="@mipmap/ic_launcher"
-            android:src="@drawable/image_style"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:src="@mipmap/ic_launcher"/>
+
+        <RelativeLayout
+            android:id="@+id/rwx_11"
+            android:layout_width="match_parent"
+            android:layout_height="25dp"
+            android:layout_below="@id/rwx_wz"
+            android:layout_marginTop="-25dp">
+
+            <TextView
+                android:id="@+id/rwx_lb"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:text="类别：交流"
+                android:textColor="#404040"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="120dp"
+                android:src="@drawable/ic_monetization_on_black_24dp" />
+
+            <TextView
+                android:id="@+id/rwx_xs"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="144dp"
+                android:text="1"
+                android:textColor="#101010"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="190dp"
+                android:src="@drawable/ic_add_circle_black_24dp" />
+
+            <TextView
+                android:id="@+id/rwx_zt"
+                android:layout_width="45dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="214dp"
+                android:text="8"
+                android:textColor="#101010"
+                android:textSize="14dp" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="260dp"
+                android:src="@drawable/ic_access_time_black_24dp" />
+
+            <TextView
+                android:id="@+id/rwx_sytime"
+                android:layout_width="120dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="284dp"
+                android:text="00天00小时20分"
+                android:textColor="#101010"
+                android:textSize="14dp" />
+
+        </RelativeLayout>
+
         <TextView
             android:id="@+id/rwx_nc"
-            android:layout_width="120dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="85dp"
             android:text="33的癫狂屠戮"
             android:textSize="18dp"
             android:textColor="#101010"/>
         <TextView
             android:id="@+id/rwx_id"
-            android:layout_width="100dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginLeft="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="85dp"
             android:text="1800301828"
             android:textSize="13dp"
             android:textColor="#404040"/>
-<!--        <TextView-->
-<!--            android:id="@+id/rwx_sj"-->
-<!--            android:layout_width="100dp"-->
-<!--            android:layout_height="20dp"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:layout_marginLeft="300dp"-->
-<!--            android:text="24分钟前"-->
-<!--            android:textSize="14dp"-->
-<!--            android:textColor="#AAAAAA"-->
-<!--            android:gravity="end"/>-->
+        <!--        <TextView-->
+        <!--            android:id="@+id/rwx_sj"-->
+        <!--            android:layout_width="100dp"-->
+        <!--            android:layout_height="20dp"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:layout_marginLeft="300dp"-->
+        <!--            android:text="24分钟前"-->
+        <!--            android:textSize="14dp"-->
+        <!--            android:textColor="#AAAAAA"-->
+        <!--            android:gravity="end"/>-->
 
         <TextView
             android:id="@+id/rwx_wz"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="80dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="85dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="30dp"
@@ -59,138 +124,85 @@
             android:text="有完结番推荐吗，偏向悬疑推理侦探类的，私我(～￣▽￣)～"
             android:textSize="16dp"
             android:textColor="#101010"/>
-        <TextView
-            android:id="@+id/rwx_lb"
-            android:layout_width="80dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="135dp"
-            android:layout_marginLeft="10dp"
-            android:text="类别：交流"
-            android:textSize="14dp"
-            android:textColor="#404040"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="135dp"
-            android:layout_marginLeft="120dp"
-            android:src="@drawable/ic_monetization_on_black_24dp"/>
-        <TextView
-            android:id="@+id/rwx_xs"
-            android:layout_width="40dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="135dp"
-            android:layout_marginLeft="144dp"
-            android:text="1"
-            android:textSize="14dp"
-            android:textColor="#101010"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="135dp"
-            android:layout_marginLeft="190dp"
-            android:src="@drawable/ic_add_circle_black_24dp"/>
-        <TextView
-            android:id="@+id/rwx_zt"
-            android:layout_width="45dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="135dp"
-            android:layout_marginLeft="214dp"
-            android:text="8"
-            android:textSize="14dp"
-            android:textColor="#101010"/>
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="135dp"
-            android:layout_marginLeft="260dp"
-            android:src="@drawable/ic_access_time_black_24dp"/>
-        <TextView
-            android:id="@+id/rwx_sytime"
-            android:layout_width="120dp"
-            android:layout_height="20dp"
-            android:layout_marginTop="135dp"
-            android:layout_marginLeft="284dp"
-            android:text="00天00小时20分"
-            android:textSize="14dp"
-            android:textColor="#101010"/>
+
         <View
-            android:background="#AAAAAA"
-            android:layout_height="3px"
             android:layout_width="match_parent"
-            android:layout_alignParentBottom="true">
-        </View>
+            android:layout_height="3px"
+            android:layout_below="@id/rwx_11"
+            android:layout_marginTop="0dp"
+            android:background="#AAAAAA"></View>
     </RelativeLayout>
 
-<!--    <RelativeLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
 
-<!--&lt;!&ndash;        <ImageView&ndash;&gt;-->
-<!--&lt;!&ndash;            android:id="@+id/iv_image"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:layout_height="128dp"&ndash;&gt;-->
-<!--&lt;!&ndash;            android:scaleType="centerCrop"&ndash;&gt;-->
-<!--&lt;!&ndash;            />&ndash;&gt;-->
+    <!--&lt;!&ndash;        <ImageView&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:id="@+id/iv_image"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_width="match_parent"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:layout_height="128dp"&ndash;&gt;-->
+    <!--&lt;!&ndash;            android:scaleType="centerCrop"&ndash;&gt;-->
+    <!--&lt;!&ndash;            />&ndash;&gt;-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/ls_tv_task_title"-->
-<!--            style="@style/AppTheme"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:paddingTop="8dp"-->
-<!--            android:paddingStart="8dp"-->
-<!--            android:paddingLeft="8dp"-->
-<!--            android:paddingBottom="4dp"-->
-<!--            android:textColor="@color/colorPrimary"-->
-<!--            android:textSize="18sp"-->
-<!--            android:textStyle="bold" />-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/ls_tv_task_title"-->
+    <!--            style="@style/AppTheme"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:paddingTop="8dp"-->
+    <!--            android:paddingStart="8dp"-->
+    <!--            android:paddingLeft="8dp"-->
+    <!--            android:paddingBottom="4dp"-->
+    <!--            android:textColor="@color/colorPrimary"-->
+    <!--            android:textSize="18sp"-->
+    <!--            android:textStyle="bold" />-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/tv_task_status"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/ls_tv_task_title"-->
-<!--            android:paddingStart="8dp"-->
-<!--            android:paddingLeft="8dp"-->
-<!--            android:paddingBottom="4dp"-->
-<!--            android:textColor="@android:color/secondary_text_light"-->
-<!--            style="@style/AppTheme"/>-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/tv_task_status"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/ls_tv_task_title"-->
+    <!--            android:paddingStart="8dp"-->
+    <!--            android:paddingLeft="8dp"-->
+    <!--            android:paddingBottom="4dp"-->
+    <!--            android:textColor="@android:color/secondary_text_light"-->
+    <!--            style="@style/AppTheme"/>-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/ls_tv_task_OAR"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/tv_task_status"-->
-<!--            android:paddingStart="8dp"-->
-<!--            android:paddingLeft="8dp"-->
-<!--            android:paddingBottom="4dp"-->
-<!--            android:textColor="@android:color/secondary_text_light"-->
-<!--            style="@style/AppTheme"/>-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/ls_tv_task_OAR"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/tv_task_status"-->
+    <!--            android:paddingStart="8dp"-->
+    <!--            android:paddingLeft="8dp"-->
+    <!--            android:paddingBottom="4dp"-->
+    <!--            android:textColor="@android:color/secondary_text_light"-->
+    <!--            style="@style/AppTheme"/>-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/ls_tv_task_description"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/ls_tv_task_OAR"-->
-<!--            android:paddingStart="8dp"-->
-<!--            android:paddingLeft="8dp"-->
-<!--            android:paddingBottom="4dp"-->
-<!--            android:textColor="@android:color/secondary_text_light"-->
-<!--            style="@style/AppTheme"/>-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/ls_tv_task_description"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/ls_tv_task_OAR"-->
+    <!--            android:paddingStart="8dp"-->
+    <!--            android:paddingLeft="8dp"-->
+    <!--            android:paddingBottom="4dp"-->
+    <!--            android:textColor="@android:color/secondary_text_light"-->
+    <!--            style="@style/AppTheme"/>-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/ls_tv_task_publisherName"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_below="@id/ls_tv_task_description"-->
-<!--            android:paddingStart="8dp"-->
-<!--            android:paddingLeft="8dp"-->
-<!--            android:paddingBottom="4dp"-->
-<!--            android:textColor="@android:color/secondary_text_light"-->
-<!--            style="@style/AppTheme"/>-->
+    <!--        <TextView-->
+    <!--            android:id="@+id/ls_tv_task_publisherName"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_below="@id/ls_tv_task_description"-->
+    <!--            android:paddingStart="8dp"-->
+    <!--            android:paddingLeft="8dp"-->
+    <!--            android:paddingBottom="4dp"-->
+    <!--            android:textColor="@android:color/secondary_text_light"-->
+    <!--            style="@style/AppTheme"/>-->
 
 
-<!--    </RelativeLayout >-->
+    <!--    </RelativeLayout >-->
 </androidx.cardview.widget.CardView>
 
     <!--    -->
