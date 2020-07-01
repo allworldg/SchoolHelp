@@ -11,8 +11,10 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.TextureView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
@@ -110,9 +112,9 @@ public class SubmitTaskFragment extends Fragment {
         assert navArgument != null;
         currentUserObjectId = (String) navArgument.getDefaultValue();
 
-        mActivity=getActivity();
-        mContext=getContext();
-        mRoot=root;
+        mActivity = getActivity();
+        mContext = getContext();
+        mRoot = root;
 
 
         initCurrentUser();//初始化当前用户
@@ -128,7 +130,7 @@ public class SubmitTaskFragment extends Fragment {
         try {
 
             initDeadlinePicker(root);
-        }catch (Exception e){
+        } catch (Exception e) {
             Log.d("calender", "onCreateView: ");
         }
 
@@ -143,7 +145,7 @@ public class SubmitTaskFragment extends Fragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    public void initDeadlinePicker(View root){
+    public void initDeadlinePicker(View root) {
         //获取当前日期
         DatePicker submit_task_deadlinePicker_date = root.findViewById(R.id.fb_datepicker);
         TimePicker submit_task_deadlinePicker_time = root.findViewById(R.id.fb_timepicker);
@@ -160,12 +162,12 @@ public class SubmitTaskFragment extends Fragment {
             @Override
             public void onDateChanged(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                 //toastShow("日期变更");
-                SubmitTaskFragment.year=year;
-                SubmitTaskFragment.month=monthOfYear;
-                SubmitTaskFragment.dayOfMonth=dayOfMonth;
-                toastShow(Integer.toString(year)+"年"
-                        +Integer.toString(monthOfYear+1)+"月"
-                        +Integer.toString(dayOfMonth)+"日");
+                SubmitTaskFragment.year = year;
+                SubmitTaskFragment.month = monthOfYear;
+                SubmitTaskFragment.dayOfMonth = dayOfMonth;
+                toastShow(Integer.toString(year) + "年"
+                        + Integer.toString(monthOfYear + 1) + "月"
+                        + Integer.toString(dayOfMonth) + "日");
                 setDateTime();
             }
         });
@@ -176,40 +178,40 @@ public class SubmitTaskFragment extends Fragment {
         submit_task_deadlinePicker_time.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
             @Override
             public void onTimeChanged(TimePicker view, int hourOfDay, int minute) {
-                toastShow(Integer.toString(hourOfDay)+"点"
-                               +Integer.toString(minute)+"分");
-                SubmitTaskFragment.hour=hourOfDay;
-                SubmitTaskFragment.minute=minute;
+                toastShow(Integer.toString(hourOfDay) + "点"
+                        + Integer.toString(minute) + "分");
+                SubmitTaskFragment.hour = hourOfDay;
+                SubmitTaskFragment.minute = minute;
                 setDateTime();
-                int y=0;
+                int y = 0;
             }
         });
 
     }
 
-    public void setDateTime(){
-        int monthTemp=month+1;
-        SimpleDateFormat sdf =  new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        String dateTime = year+"-"+
-                (monthTemp)+"-"+
-                dayOfMonth+" "+
-                hour+":"+
-                minute+":"+
+    public void setDateTime() {
+        int monthTemp = month + 1;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dateTime = year + "-" +
+                (monthTemp) + "-" +
+                dayOfMonth + " " +
+                hour + ":" +
+                minute + ":" +
                 "00";
-        try{
+        try {
             Date date = sdf.parse(dateTime);
-            bombDate=new BmobDate(date);
-        }catch (Exception e){
-            Log.d("setTime", e.toString());;
+            bombDate = new BmobDate(date);
+        } catch (Exception e) {
+            Log.d("setTime", e.toString());
+            ;
         }
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void submit(){
-
-        EditText submit_task_title=getView().findViewById(R.id.fb_bt);
-        EditText submit_task_text=getView().findViewById(R.id.fb_text);
-        EditText submit_task_OAR=getView().findViewById(R.id.fb_xs);
+    public void submit() {
+        EditText submit_task_title = getView().findViewById(R.id.fb_bt);
+        EditText submit_task_text = getView().findViewById(R.id.fb_text);
+        EditText submit_task_OAR = getView().findViewById(R.id.fb_xs);
         DatePicker submit_task_deadlinePicker_date = getView().findViewById(R.id.fb_datepicker);
         TimePicker submit_task_deadlinePicker_time = getView().findViewById(R.id.fb_timepicker);
         Spinner submit_task_type_spinner = getView().findViewById(R.id.fb_lb);
@@ -217,16 +219,18 @@ public class SubmitTaskFragment extends Fragment {
 //        String[] str = {"1","2","3"};
 //        SpinnerAdapter spinnerAdapter = new SpinnerAdapter();
 //        spinnerAdapter.getDropDownView()
-
-        newTask.setType(submit_task_type_spinner.getSelectedItem().toString());
-
-
-        newTask.setTitle(submit_task_title.getText().toString());
-        newTask.setDescription(submit_task_text.getText().toString());
-        newTask.setOAR(Integer.parseInt(submit_task_OAR.getText().toString()));
-        newTask.setStatus("未接受");
-        newTask.setPublisher(currentUser);
-        //task.setType(submit_task_type_spinner.toString());
+        if (TextUtils.isEmpty(submit_task_title.getText().toString().trim()) ||
+                TextUtils.isEmpty(submit_task_text.getText().toString().trim())||
+                TextUtils.isEmpty(submit_task_OAR.getText().toString())) {
+            toastShow("标题、内容和悬赏不可为空");
+        } else {
+            newTask.setType(submit_task_type_spinner.getSelectedItem().toString());
+            newTask.setTitle(submit_task_title.getText().toString());
+            newTask.setDescription(submit_task_text.getText().toString());
+            newTask.setOAR(Integer.parseInt(submit_task_OAR.getText().toString()));
+            newTask.setStatus("未接受");
+            newTask.setPublisher(currentUser);
+            //task.setType(submit_task_type_spinner.toString());
 
 //        //task.setDeadline();
 //        BmobFile picture = selectPicture();
@@ -234,54 +238,55 @@ public class SubmitTaskFragment extends Fragment {
 //            newTask.setPicture(picture);
 //        }else{ newTask.setPicture(null);}
 
-        newTask.setDeadline(bombDate);
+            newTask.setDeadline(bombDate);
 
-        if(currentUser.getBalance().intValue()>=newTask.getOAR().intValue())//若余额>悬赏
-        {
-            currentUser.setBalance(currentUser.getBalance().intValue()-newTask.getOAR().intValue());
-            newTask.save(new SaveListener<String>() {
-                @Override
-                public void done(String s, BmobException e) {
-                    if(e!=null){
-                        toastShow("发布失败");
-                    }else{
-                        toastShow("发布成功");
+            if (currentUser.getBalance().intValue() >= newTask.getOAR().intValue())//若余额>悬赏
+            {
+                currentUser.setBalance(currentUser.getBalance().intValue() - newTask.getOAR().intValue());
+                newTask.save(new SaveListener<String>() {
+                    @Override
+                    public void done(String s, BmobException e) {
+                        if (e != null) {
+                            toastShow("发布失败");
+                        } else {
+                            toastShow("发布成功");
+                        }
                     }
-                }
-            });
-            currentUser.save(new SaveListener<String>() {
-                @Override
-                public void done(String s, BmobException e) {
-                    if(e!=null){
-                        toastShow("余额更新失败");
-                    }else{
+                });
+                currentUser.save(new SaveListener<String>() {
+                    @Override
+                    public void done(String s, BmobException e) {
+                        if (e != null) {
+                            toastShow("余额更新失败");
+                        } else {
 
+                        }
                     }
-                }
-            });
-        }else{
-            toastShow("余额不足");
+                });
+            } else {
+                toastShow("余额不足");
+            }
         }
+
     }
 
 
-
     /*相册中选图片返回一个File*/
-    private BmobFile selectPicture(){
+    private BmobFile selectPicture() {
         BmobFile picture = new BmobFile();
         return picture;
     }
 
     /*初始化当前用户*/
-    private void initCurrentUser(){
+    private void initCurrentUser() {
         BmobQuery<User> userQuery = new BmobQuery<>();
-        userQuery.addWhereEqualTo("objectId",currentUserObjectId);
+        userQuery.addWhereEqualTo("objectId", currentUserObjectId);
         userQuery.findObjects(new FindListener<User>() {
             @Override
             public void done(List<User> list, BmobException e) {
-                if(e!=null){
+                if (e != null) {
                     Log.d("pullTaskList", "error");
-                }else{
+                } else {
                     Message message = userListHandler.obtainMessage();
                     message.what = 0;
                     //以消息为载体
@@ -305,19 +310,21 @@ public class SubmitTaskFragment extends Fragment {
         }
     };
 
-    private void toastShow(String msg){
-        Toast.makeText(getContext(),msg,Toast.LENGTH_SHORT).show();
+    private void toastShow(String msg) {
+        Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
     }
 
 
     /*用于给按钮点击事件*/
-    public void uploadPhoto(View view){startUploadImage();}
+    public void uploadPhoto(View view) {
+        startUploadImage();
+    }
 
-    public void startUploadImage(){
+    public void startUploadImage() {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent,1);
+        startActivityForResult(intent, 1);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
@@ -344,25 +351,25 @@ public class SubmitTaskFragment extends Fragment {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    protected void upImageToServer(Uri uri){
+    protected void upImageToServer(Uri uri) {
         //String path = UriToPathUtil.getRealFilePath(this,uri);
-        String path = FileUtils.getPath(mActivity.getApplicationContext(),uri);
+        String path = FileUtils.getPath(mActivity.getApplicationContext(), uri);
 
         BmobFile taskImage = new BmobFile(new File(path));
         taskImage.upload(new UploadFileListener() {
             @Override
             public void done(BmobException e) {
-                if(e!=null){
+                if (e != null) {
                     Log.d("Upload", e.toString());
                     toastShow("上传服务器失败");
-                }else{
+                } else {
                     toastShow("上传成功");
                 }
             }
         });
         try {
             newTask.setPicture(taskImage);
-        }catch (Exception e){
+        } catch (Exception e) {
             Log.d("setImage", e.toString());
         }
     }
