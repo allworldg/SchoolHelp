@@ -19,6 +19,7 @@ import androidx.navigation.Navigation;
 import com.example.campushelp_s.ViewModel.UserViewModel;
 import com.example.campushelp_s.R;
 import com.example.campushelp_s.databinding.PersonalMainFragBinding;
+
 import java.util.List;
 import bean.Task;
 import bean.User;
@@ -101,8 +102,8 @@ public class Main_Information_Fragment extends Fragment/* implements View.OnClic
         binding.tvUserID.setText(user.getUserID());
         binding.wdXb.setText(user.getSex());
         binding.wdSjh.setText(user.getPhone());
-        binding.wdYx.setText(user.getEmail()+" U币");
-        binding.wdYe.setText(user.getBalance().toString());
+        binding.wdYx.setText(user.getEmail());
+        binding.wdYe.setText(user.getBalance().toString()+" U币");
         binding.wdWcsl.setText(user.getDoneNumber().toString());
         binding.wdGrjj.setText(user.getInfo());
 
