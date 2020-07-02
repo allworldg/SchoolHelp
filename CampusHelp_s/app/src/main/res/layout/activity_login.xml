@@ -118,6 +118,20 @@
             android:text="忘记密码"
             android:textColor="@android:color/black" />
 
+        <CheckBox
+            android:id="@+id/cb_remember_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:layout_marginLeft="55dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_toEndOf="@+id/dl_wjmm"
+            android:layout_toRightOf="@+id/dl_wjmm"
+            android:text="记住密码" />
+
         <Button
             android:id="@+id/dl_zczh"
             android:layout_width="60dp"
@@ -131,17 +145,7 @@
             android:text="注册账号"
             android:textColor="@android:color/black" />
     </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="25dp">
-        <CheckBox
-            android:id="@+id/cb_remember_pwd"
-            android:text="记住密码"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
 
-            />
-    </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="120dp"
