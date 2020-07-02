@@ -63,12 +63,12 @@ public class Attention_fragment extends Fragment {
         return view;
     }
 
-    @Override
-    public void onStop() {
-        super.onStop();
-        FrameLayout replace = mActivity.findViewById(R.id.personal_replace);
-        replace.setVisibility(View.INVISIBLE);
-    }
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//        FrameLayout replace = mActivity.findViewById(R.id.personal_replace);
+//        replace.setVisibility(View.INVISIBLE);
+//    }
 
     public void initData() {
         Log.d("init","init");
