@@ -286,6 +286,7 @@
                      android:text="注册"
                      style="@style/anniu"
                      android:id="@+id/bt_register"
+                     android:onClick="register"
                      />
              </RelativeLayout>
          </RelativeLayout>

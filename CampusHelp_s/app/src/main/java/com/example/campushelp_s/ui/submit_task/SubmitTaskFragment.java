@@ -216,9 +216,6 @@ public class SubmitTaskFragment extends Fragment {
         TimePicker submit_task_deadlinePicker_time = getView().findViewById(R.id.fb_timepicker);
         Spinner submit_task_type_spinner = getView().findViewById(R.id.fb_lb);
 
-//        String[] str = {"1","2","3"};
-//        SpinnerAdapter spinnerAdapter = new SpinnerAdapter();
-//        spinnerAdapter.getDropDownView()
         if (TextUtils.isEmpty(submit_task_title.getText().toString().trim()) ||
                 TextUtils.isEmpty(submit_task_text.getText().toString().trim())||
                 TextUtils.isEmpty(submit_task_OAR.getText().toString())) {
@@ -230,13 +227,7 @@ public class SubmitTaskFragment extends Fragment {
             newTask.setOAR(Integer.parseInt(submit_task_OAR.getText().toString()));
             newTask.setStatus("未接受");
             newTask.setPublisher(currentUser);
-            //task.setType(submit_task_type_spinner.toString());
 
-//        //task.setDeadline();
-//        BmobFile picture = selectPicture();
-//        if(picture.getFilename()!=null){
-//            newTask.setPicture(picture);
-//        }else{ newTask.setPicture(null);}
 
             newTask.setDeadline(bombDate);
 
