@@ -4,4 +4,9 @@
     <string name="title_mytask">我的任务</string>
     <string name="title_my">我的信息</string>
     <string name="title_submit_task">发布任务</string>
+
+    <string name="shared_preferenced_file_name">sp_login</string>
+    <string name="login_acount_name">login_account_name</string>
+    <string name="login_passwd">login_passwd</string>
+    <string name="login_remember_passwd">login_remember_passwd</string>
 </resources>
