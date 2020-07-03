@@ -44,7 +44,6 @@ public class Collection_Fragment extends Fragment {
     User user;//当前登陆的用户对象
 
     private View mRoot;
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -83,7 +82,6 @@ public class Collection_Fragment extends Fragment {
      */
     public void initData() {
         BmobQuery<Task> taskQuery = new BmobQuery<Task>();//查找收藏的任务
-
         taskQuery.addWhereRelatedTo("collection", new BmobPointer(user));
         taskQuery.findObjects(new FindListener<Task>() {
             @Override

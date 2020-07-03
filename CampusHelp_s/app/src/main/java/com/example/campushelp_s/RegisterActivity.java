@@ -45,7 +45,6 @@ import cn.bmob.v3.listener.UploadFileListener;
 
 public class RegisterActivity extends AppCompatActivity{
 
-
     private final int REQUEST_EXTERNAL_STORAGE=1;
     private static String[] PERMISSIONS_STORAGE={
             Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -60,7 +59,6 @@ public class RegisterActivity extends AppCompatActivity{
     private static final int CROP_SMALL_PICTURE = 2;
     protected static Uri tempUri;
 
-
     //调取系统摄像头的请求码
     private static final int MY_ADD_CASE_CALL_PHONE = 6;
     //打开相册的请求码
@@ -73,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity{
     private TextView takePhotoTV;
     private TextView choosePhotoTV;
     private TextView cancelTV;
-
+    private ImageView img_return;;
     private User newUser;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -81,7 +79,11 @@ public class RegisterActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        img_return = findViewById(R.id.zc_return);
         newUser=new User();
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();//隐藏系统自带的顶部导航栏
+        }
 //取消严格模式  FileProvider
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
@@ -102,6 +104,14 @@ public class RegisterActivity extends AppCompatActivity{
             Bmob.initialize(this, "3fdb919b080c6aec487233c1f30126ab");
             iv_personal_icon = (ImageView) findViewById(R.id.iv_user_icon);
         }
+        img_return.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                RegisterActivity.this.finish();
+            }
+        });
+
+
 
     }
 

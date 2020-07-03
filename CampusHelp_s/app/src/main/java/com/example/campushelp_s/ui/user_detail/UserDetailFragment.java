@@ -42,7 +42,6 @@ public class UserDetailFragment extends Fragment {
     private User detailedUser;
     private String currentUserObjectId;
     private String detailedUserObjectId;
-
     private UserDetailModel userDetailModel;
 
     public View mRoot;
@@ -108,7 +107,6 @@ public class UserDetailFragment extends Fragment {
         TextView tv_user_detail_collection = view.findViewById(R.id.ck_scj);
         TextView tv_user_detail_doneNumber = view.findViewById(R.id.ck_wcsl);
         TextView tv_user_detail_info = view.findViewById(R.id.ck_grjj);
-
 
         //setImage暂时省略
         tv_user_detail_name.setText(detailedUser.getName());

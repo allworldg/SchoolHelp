@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Bmob.initialize(this, "3fdb919b080c6aec487233c1f30126ab");
         currentUser = (User)getIntent().getSerializableExtra("user");
         userViewModel = new ViewModelProvider(this).get(UserViewModel.class);
         userViewModel.setUser(currentUser);//传入共享的值
